@@ -7,25 +7,25 @@
 
 int casilla_seleccionada(char fila, int columna, char tablero[FILAS][COLUMNAS])
 {
-    int fila_indice;
-    
-    fila = toupper(fila_indice);
+    int fila_entero;
+
+    fila = toupper(fila); //Pasa de minusculas a mayusculas
     columna--; //Empieza desde 0 
-    fila_indice = fila - 'A';
+    fila_entero = (int) fila - 'A';
     //Comprovamos entradas correctas sino nos devolvera mensaje
     assert (columna < COLUMNAS && columna >= 0);
-    assert (fila < FILAS && fila >= 0);
-    if (tablero[fila][columna] == MINA) //Caso dar a la mina
+    assert (fila_entero < FILAS && fila_entero >= 0);
+    if (tablero[fila_entero][columna] == MINA) //Caso dar a la mina
     {
         return MINA_ENCONTRADA;
     }
-    else if (tablero[fila][columna] == CASILLA_VACIA) //Caso casilla ya usada
+    else if (tablero[fila_entero][columna] == CASILLA_VACIA) //Caso casilla ya usada
     {
         return JUGADA_NO_VALIDA;
     }
     else
     {
-        tablero[fila][columna] = CASILLA_VACIA; //Caso casilla que no es mina
+        tablero[fila_entero][columna] = CASILLA_VACIA; //Caso casilla que no es mina
         return  ERROR_NINGUNO;
     }
 }

@@ -10,7 +10,7 @@
 #define ESPACIO_SIN_DESCUBRIR '.'
 #define CASILLA_VACIA ' '
 #define MINA '*'
-#define CANTIDAD_MINAS 5
+#define CANTIDAD_MINAS 7
 
 #define DEBUG 0
 
